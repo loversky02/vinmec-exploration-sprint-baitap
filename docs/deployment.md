@@ -50,8 +50,11 @@ Nguồn là [slides/slides.html](../slides/slides.html), CSS, JavaScript, font v
 slide dùng vào static root này; không trỏ Caddy tới toàn bộ repository.
 
 Kiểm tra `/slides/`, chuyển trang, liên kết ảnh và đường dẫn trực tiếp tới từng
-slide sau cập nhật. Bản `slides.pdf` cũ được giữ trong Git làm tài liệu lưu trữ;
-trang HTML là bản trình bày hiện hành. Có thể quay về bản slide trước bằng cách
+slide sau cập nhật. `slides.pdf` ở thư mục gốc là bản nộp bài được xuất đồng bộ
+từ HTML: quy tắc in trong CSS đặt khung 16:9, một slide mỗi trang. Khi xuất bằng
+Chromium, bật in nền, dùng khổ trang CSS và tắt header/footer của trình duyệt;
+kiểm tra đủ 10 trang và render từng trang trước khi thay PDF. Bản PDF triển khai
+ở `/slides/slides.pdf`. Có thể quay về bản slide trước bằng cách
 đổi lại symlink riêng của presentation, không cần restart prototype.
 
 ## Khôi phục

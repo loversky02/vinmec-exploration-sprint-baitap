@@ -6,6 +6,8 @@ Bài tập 1 tuần ứng tuyển Vinmec Exploration Sprint.
 
 Slide HTML đọc được trên điện thoại và có chế độ trình chiếu trên máy tính. Prototype dùng dữ liệu giả; không nhập thông tin thật.
 
+[Tải PDF nộp bài (10 slide)](slides.pdf), đồng bộ với bản HTML.
+
 ## Khoảnh khắc đã chọn
 
 **Sau khi khám xong: tìm và xem được kết quả xét nghiệm, chụp chiếu của mình.** Từ 5/2024 phần lớn ca chụp chiếu ở Vinmec không còn in phim, nên app gần như là lối chính để nhận kết quả.
