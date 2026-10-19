@@ -7,7 +7,7 @@ Quy ước:
 - **AI hỗ trợ**: AI soạn khung hoặc bản nháp, mình sửa và chịu trách nhiệm nội dung.
 - **AI tạo**: nội dung do AI sinh ra, mình kiểm tra lại; ghi rõ cách kiểm tra.
 
-Công cụ: Claude (Anthropic) qua Claude Code.
+Công cụ: Claude (Anthropic) qua Claude Code; Codex (OpenAI) hỗ trợ triển khai web, cập nhật README và thiết kế lại slide HTML. Mobbin MCP được dùng để tìm mẫu tham khảo giao diện.
 
 | File | Mức | Ghi chú |
 |---|---|---|
@@ -26,7 +26,10 @@ Công cụ: Claude (Anthropic) qua Claude Code.
 | `05-prototype/` (code, `prompts/system-prompt.md`) | AI tạo | AI viết code và system prompt. Mình chạy thử luồng bấm và chế độ không AI. **Chế độ AI chưa chạy** (chưa có API key). Giao diện được làm lại theo mẫu tìm trên Mobbin (Apple Health, Bevel, Keeta, Blue Apron); chỉ lấy bố cục, không chép ảnh hay logo |
 | `06-rui-ro-dao-duc/README.md` | AI hỗ trợ | AI soạn bảng rủi ro; cột trạng thái ghi rõ cái nào đã có, cái nào mới là đề xuất |
 | `07-coach-plan/README.md` | AI hỗ trợ | AI soạn khung theo runbook coach Track 1; lịch và cách gỡ dựa trên chỗ mình kẹt |
-| `README.md`, `slides.pdf` (nguồn `slides/slides.html`) | AI hỗ trợ | AI soạn từ các thư mục trên, không thêm nội dung mới |
+| `README.md` | AI hỗ trợ | Soạn từ các thư mục trên; Codex cập nhật liên kết web cho người xem repo public |
+| `slides/slides.html`, `slides/slides.css`, `slides/slides.js` | AI tạo (thiết kế và code), AI hỗ trợ (nội dung) | Codex thiết kế lại bản trình bày web từ 10 slide gốc; tham khảo [SSENSE](https://mobbin.com/sites/sections/4de98a06-dbff-4e54-83c6-a301c519bba0) và [Airtable](https://mobbin.com/sites/sections/307eaec5-c6fd-4ecc-aeff-c1355176db87) qua Mobbin MCP, không chép ảnh hoặc logo. Giữ nguyên giới hạn bằng chứng; kiểm tra hiển thị và thao tác bằng trình duyệt, không tính là thử với người dùng thật |
+| `slides.pdf` | AI hỗ trợ | Bản PDF lưu trữ trước lần thiết kế lại web; bản hiện hành là slide HTML |
+| `deploy/`, `docs/deployment.md` | AI tạo | Cấu hình phục vụ prototype và slide trên VPS; kiểm tra HTTPS và dịch vụ, không kiểm chứng lợi ích với người dùng |
 
 ## Chỗ AI làm sai hoặc hời hợt, và đã sửa
 

@@ -1,169 +1,178 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><title>Nhận kết quả trên MyVinmec</title>
-<style>
-@page { size: 1280px 720px; margin: 0; }
-* { box-sizing: border-box; }
-body { margin: 0; font: 22px/1.4 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #1a1a1a; }
-section { width: 1280px; height: 720px; padding: 56px 72px; page-break-after: always; position: relative; overflow: hidden; }
-section:last-child { page-break-after: auto; }
-h1 { font-size: 44px; margin: 0 0 18px; color: #0a5c8f; }
-h2 { font-size: 34px; margin: 0 0 22px; color: #0a5c8f; }
-.n { position: absolute; right: 40px; bottom: 26px; font-size: 14px; color: #999; }
-.muted { color: #666; } .small { font-size: 17px; }
-.box { background: #f3f7fa; border-left: 6px solid #0a5c8f; padding: 18px 22px; border-radius: 6px; }
-.warn { background: #fff7e0; border-left-color: #e0a100; }
-.cols { display: flex; gap: 40px; align-items: flex-start; }
-.cols > div { flex: 1; }
-ul { margin: 8px 0; padding-left: 26px; } li { margin: 6px 0; }
-table { border-collapse: collapse; width: 100%; font-size: 18px; }
-td, th { border-bottom: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
-th { color: #0a5c8f; }
-img.shot { border: 1px solid #ccc; border-radius: 8px; }
-</style></head><body>
-
-<section>
-  <p class="muted">Bài tập ứng tuyển · Vinmec Exploration Sprint</p>
-  <h1 style="font-size:54px;margin-top:120px">Một lần đi khám:<br>khoảnh khắc "nhận kết quả" trên MyVinmec</h1>
-  <p class="muted" style="margin-top:40px">Bằng chứng: 1 phỏng vấn (P3) · tự dùng thử app (6 nhiệm vụ, 22 ảnh) · 21 review trên store<br>Prototype bấm được + trợ lý tìm kết quả theo trạng thái tài khoản</p>
-  <span class="n">1</span>
-</section>
-
-<section>
-  <h2>Khoảnh khắc đã chọn và vì sao</h2>
-  <div class="box"><b>Sau khi khám xong: tìm và xem được kết quả xét nghiệm, chụp chiếu của mình.</b></div>
-  <ul style="margin-top:28px">
-    <li>Từ 5/2024 phần lớn ca chụp chiếu ở Vinmec không in phim, nên app gần như là lối chính để nhận kết quả.</li>
-    <li>Ba nguồn bằng chứng cùng chỉ về khoảnh khắc này nhiều hơn các khoảnh khắc khác (đặt lịch, chờ tại viện, tái khám).</li>
-    <li>Nếu bước này hỏng, người bệnh phải gọi tổng đài, quay lại viện, hoặc bỏ cuộc.</li>
-  </ul>
-  <div class="box warn" style="margin-top:28px"><b>Giới hạn:</b> mới có 1/3 buổi phỏng vấn đề yêu cầu. Mình không bịa P1, P2; bù bằng hai nguồn phụ và ghi tách riêng từng nguồn.</div>
-  <span class="n">2</span>
-</section>
-
-<section>
-  <h2>Bằng chứng: chatbot chỉ đường tới mục không có</h2>
-  <div class="cols">
-    <div style="flex:0 0 300px"><img class="shot" src="../01-phong-van/app-screens/T6-chatbot-04-hoi-xem-ket-qua-o-dau.png" style="height:560px"></div>
-    <div>
-      <ul>
-        <li><b>Dùng thử (T3):</b> lướt hết Trang chủ, 15 ô dịch vụ, tab Hồ sơ. Không có mục nào ghi "kết quả".</li>
-        <li><b>Dùng thử (T6):</b> chatbot bảo vào "Kết quả cận lâm sàng", "Lịch sử khám". Tab Hồ sơ không có hai mục này. Có thể chúng chỉ hiện sau khi kết nối hồ sơ khám, nhưng chatbot không nói điều kiện đó.</li>
-        <li><b>Review store:</b> "không kiếm ra hồ sơ", OTP lỗi, "phải đợi bác sĩ đưa lên".</li>
-        <li><b>P3 (viện công):</b> cầm kết quả trên tay thì bác sĩ giải thích đủ hiểu; cái tốn là chờ ở viện.</li>
-      </ul>
-      <p class="small muted">Ảnh đã che thông tin cá nhân. P3 không đồng ý cho trích lời nên không có trích dẫn nguyên văn.</p>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 fill=%27%23123f3d%27/%3E%3Cpath d=%27M18 33l9 9 20-22%27 fill=%27none%27 stroke=%27%23d5eb8c%27 stroke-width=%276%27/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#123f3d">
+  <meta name="description" content="10 slide về trải nghiệm nhận kết quả trên MyVinmec: bằng chứng ban đầu, journey map, prototype và giới hạn nghiên cứu.">
+  <title>Nhận kết quả trên MyVinmec · Exploration Sprint</title>
+  <link rel="preload" href="fonts/be-vietnam-pro-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="slides.css">
+  <script src="slides.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#deck">Đến nội dung</a>
+<header class="toolbar">
+  <a class="wordmark" href="#slide-1" aria-label="Về slide đầu">MyVinmec <span>/ Exploration Sprint</span></a>
+  <nav class="tools" aria-label="Công cụ trình bày">
+    <details class="contents">
+      <summary>Mục lục <span aria-hidden="true">＋</span></summary>
+      <ol class="toc">
+        <li><a href="#slide-1">Một lần đi khám</a></li>
+        <li><a href="#slide-2">Khoảnh khắc đã chọn</a></li>
+        <li><a href="#slide-3">Bằng chứng ban đầu</a></li>
+        <li><a href="#slide-4">Insight và độ mạnh</a></li>
+        <li><a href="#slide-5">Journey map</a></li>
+        <li><a href="#slide-6">Need statement</a></li>
+        <li><a href="#slide-7">Ba tham chiếu quốc tế</a></li>
+        <li><a href="#slide-8">Prototype</a></li>
+        <li><a href="#slide-9">Rủi ro và Human–AI</a></li>
+        <li><a href="#slide-10">Tiếp theo và coaching</a></li>
+      </ol>
+    </details>
+    <button class="fullscreen js-only" type="button" hidden aria-label="Bật toàn màn hình">Toàn màn hình <span aria-hidden="true">↗</span></button>
+  </nav>
+</header>
+<main id="deck" tabindex="-1">
+  <section class="slide cover" id="slide-1" aria-labelledby="title-1">
+    <div class="cover-main">
+      <p class="eyebrow">Bài tập ứng tuyển · Nghiên cứu trải nghiệm</p>
+      <h1 id="title-1">Một lần đi khám.<br><span>Nhận được kết quả?</span></h1>
+      <p class="cover-sub">Khoảnh khắc tìm và xem kết quả trên MyVinmec.</p>
     </div>
-  </div>
-  <span class="n">3</span>
-</section>
-
-<section>
-  <h2>Insight</h2>
-  <table>
-    <tr><th>#</th><th>Insight</th><th>Độ mạnh</th></tr>
-    <tr><td>I1</td><td><b>Vướng ở chỗ <i>tới được</i> kết quả, chưa phải ở chỗ <i>hiểu</i> kết quả.</b></td><td>Trung bình: 3 nguồn cùng chiều, mỗi nguồn mỏng</td></tr>
-    <tr><td>I2</td><td>Không biết kết quả đang ở trạng thái nào, cần điều kiện gì để xem (kết nối hồ sơ, chờ bác sĩ duyệt). Thông báo kết quả lẫn trong quảng cáo.</td><td>Trung bình</td></tr>
-    <tr><td>I3</td><td>Trợ lý AI hiện có trả lời như thể ai cũng ở cùng một trạng thái, nên làm <i>tăng</i> bối rối.</td><td>Yếu: 1 câu hỏi, 1 tài khoản</td></tr>
-    <tr><td>I4</td><td>Chọn "chưa từng khám, tạo hồ sơ mới" xong thì mất lối kết nối hồ sơ cũ.</td><td>Yếu: chưa kiểm với người đã khám</td></tr>
-    <tr><td>I5</td><td>Chờ tại viện tốn nửa ngày, nhưng xảy ra ngoài app.</td><td>Yếu với app</td></tr>
-  </table>
-  <p class="small muted" style="margin-top:18px">Tất cả là giả thuyết có bằng chứng ban đầu, chưa được kiểm chứng.</p>
-  <span class="n">4</span>
-</section>
-
-<section>
-  <h2>Journey map: tụt sâu nhất ở bước "tới được kết quả"</h2>
-  <img src="../02-journey-map/journey-map.png" style="width:100%;max-height:560px;object-fit:contain">
-  <span class="n">5</span>
-</section>
-
-<section>
-  <h2>Need statement (Biodesign)</h2>
-  <div class="box" style="font-size:25px">Cách để <b>giảm số lần phải gọi tổng đài, quay lại viện hoặc bỏ cuộc trước khi xem được kết quả</b>, cho <b>người bệnh ngoại trú (và người nhà xem hộ)</b> đã làm xét nghiệm hoặc chụp chiếu mà kết quả chỉ trả qua app, khi họ <b>không biết kết quả của mình đang ở trạng thái nào và cần làm gì để xem được</b>.</div>
-  <ul style="margin-top:26px">
-    <li>Không chứa giải pháp: không nhắc AI, chatbot hay tính năng.</li>
-    <li>Outcome đo được: đúng các cách xoay xở xuất hiện trong review.</li>
-    <li>Đã bỏ: "không <i>hiểu</i> kết quả" (chưa có bằng chứng); "chờ tại viện" (việc vận hành, 1 nguồn).</li>
-    <li>Nhóm "người nhà xem hộ" là giả định, chưa phỏng vấn được ai.</li>
-  </ul>
-  <span class="n">6</span>
-</section>
-
-<section>
-  <h2>3 best practice quốc tế: lấy gì, không lấy gì</h2>
-  <table>
-    <tr><th>Thực hành</th><th>Lấy</th><th>Không lấy / cẩn thận</th></tr>
-    <tr><td><b>Cures Act (Mỹ)</b><br><span class="small muted">phát hành kết quả ngay trên portal</span></td><td>Cho người bệnh thấy trạng thái thay vì ẩn hoàn toàn</td><td>Phát hành ngay kết quả bất thường gây lo lắng; khác pháp lý VN</td></tr>
-    <tr><td><b>NHS App (Anh)</b><br><span class="small muted">mục Test results, luật phát hành, truy cập hộ</span></td><td>Một mục "kết quả" rõ ràng; trạng thái "chờ bác sĩ duyệt"; xem hộ có ủy quyền</td><td>Hạ tầng dữ liệu khác; mới có tài liệu chính sách</td></tr>
-    <tr><td><b>Stanford</b><br><span class="small muted">AI soạn nháp, bác sĩ duyệt</span></td><td>Người duyệt trước khi tới người bệnh</td><td>Không cho AI giải thích chỉ số trong prototype này</td></tr>
-  </table>
-  <span class="n">7</span>
-</section>
-
-<section>
-  <h2>Prototype: "Kết quả của tôi" + trợ lý tìm kết quả</h2>
-  <div class="cols">
-    <div style="flex:0 0 560px;display:flex;gap:12px"><img class="shot" src="proto-chua_ket_noi.png" style="height:560px"><img class="shot" src="proto-dang_cho.png" style="height:560px"></div>
-    <div>
-      <p><b>Giả thuyết:</b> nếu app cho thấy điều kiện để xem và trạng thái từng kết quả, và trợ lý chỉ chỉ đường tới màn có thật theo trạng thái của chính người hỏi, thì người dùng tới được kết quả mà không cần gọi tổng đài.</p>
-      <ul class="small">
-        <li>Ô "Kết quả của tôi" ở Trang chủ; thanh 4 bước + giờ dự kiến.</li>
-        <li>Trợ lý nhận trạng thái tài khoản; máy chủ bỏ mọi nút trỏ tới màn không có.</li>
-        <li>4 tình huống giả: chưa kết nối, lỡ tạo hồ sơ mới, còn chờ, xem hộ.</li>
-        <li>Thông báo "Kết quả" tách khỏi "Ưu đãi".</li>
-      </ul>
-      <div class="box warn small"><b>Chưa thử với người dùng.</b> Chế độ AI chưa chạy lần nào (chưa có API key); mới chạy chế độ luật cố định. Mới chứng minh <i>làm được</i>, chưa chứng minh <i>giúp được</i>.</div>
+    <div class="cover-bottom">
+      <p>Một hướng thử: <strong>“Kết quả của tôi”</strong><br>và trợ lý chỉ đường theo trạng thái tài khoản.</p>
+      <p class="note">Bằng chứng ban đầu.<br>Chưa kiểm chứng lợi ích với người dùng.</p>
     </div>
-  </div>
-  <span class="n">8</span>
-</section>
+    <span class="page-number" aria-label="Slide 1 trên 10">01 / 10</span>
+  </section>
 
-<section>
-  <h2>Rủi ro và thiết kế Human–AI</h2>
-  <div class="cols">
-    <div>
-      <ul class="small">
-        <li><b>Khẩn cấp không qua model:</b> máy chủ bắt từ khóa ("đau ngực", "khó thở") trước, trả hướng dẫn gọi 115.</li>
-        <li><b>Không giải thích chỉ số:</b> chuyển sang đặt lịch hỏi bác sĩ / tổng đài.</li>
-        <li><b>Không bịa đường đi, không bịa giờ:</b> chỉ dùng màn và giờ dự kiến có trong dữ liệu.</li>
-        <li><b>Dữ liệu:</b> chỉ gửi loại xét nghiệm và trạng thái; bản thật cần đánh giá theo Nghị định 13/2023.</li>
-        <li><b>Recovery:</b> mọi màn đi tới được không cần trợ lý; luôn có tổng đài.</li>
-      </ul>
+  <section class="slide moment" id="slide-2" aria-labelledby="title-2">
+    <h2 id="title-2">Sau buổi khám, còn một bước.</h2>
+    <p class="lead">Tìm và xem được kết quả xét nghiệm,<br class="desktop-break"> chụp chiếu của mình.</p>
+    <div class="moment-grid">
+      <div class="context-copy">
+        <h3>Vì sao chọn khoảnh khắc này?</h3>
+        <p>Theo tài liệu của bài tập, từ 5/2024 phần lớn ca chụp chiếu tại Vinmec không còn in phim. App trở thành lối nhận kết quả quan trọng.</p>
+        <p>Khi không tới được kết quả: gọi tổng đài, quay lại viện hoặc bỏ cuộc.</p>
+      </div>
+      <div class="evidence-counts" aria-label="Ba nguồn bằng chứng">
+        <div><strong>01</strong><p>phỏng vấn P3<br><span>Trải nghiệm ở viện công</span></p></div>
+        <div><strong>06</strong><p>nhiệm vụ dùng thử app<br><span>22 ảnh đã che thông tin</span></p></div>
+        <div><strong>21</strong><p>review trên store<br><span>Nguồn phụ, không thay phỏng vấn</span></p></div>
+      </div>
     </div>
-    <div>
-      <div class="box"><b>Kết luận: Not Yet.</b><br><span class="small">Đủ để thử với người dùng trong môi trường giả lập. Chưa đủ để đưa lên app thật vì:<br>1. Chế độ AI chưa chạy thử.<br>2. Từ điển khẩn cấp chưa được nhân viên y tế duyệt.<br>3. Luật xem hộ và luồng dữ liệu ra nhà cung cấp model chưa được đánh giá pháp lý.</span></div>
-      <p class="small muted">12 rủi ro, mỗi rủi ro ghi rõ "đã có" hay "đề xuất": 06-rui-ro-dao-duc/</p>
-    </div>
-  </div>
-  <span class="n">9</span>
-</section>
+    <p class="footnote"><strong>Chưa đủ 3 buổi phỏng vấn theo đề.</strong> Chỉ có P3; không có P1, P2. Ba nguồn được giữ riêng, không cộng thành số người tham gia.</p>
+    <span class="page-number" aria-label="Slide 2 trên 10">02 / 10</span>
+  </section>
 
-<section>
-  <h2>Còn chưa biết, việc tiếp theo, và cách mình coach</h2>
-  <div class="cols">
-    <div>
-      <p><b>Still Unproven</b></p>
-      <ul class="small">
-        <li>Người đã khám ở Vinmec có gặp ngõ cụt I4 không.</li>
-        <li>Chatbot có chỉ sai với tài khoản đã kết nối không (I3).</li>
-        <li>Prototype có giúp người lạ tới được kết quả không.</li>
-      </ul>
-      <p><b>Tiếp theo</b></p>
-      <ul class="small">
-        <li>Phỏng vấn thêm ≥2 người: người xem qua app, người xem hộ bố mẹ.</li>
-        <li>Thử prototype với 2–3 người ngoài nhóm, sửa đúng 1 điều.</li>
-      </ul>
+  <section class="slide evidence" id="slide-3" aria-labelledby="title-3">
+    <div class="evidence-photo">
+      <img src="assets/chatbot-trial.png" alt="Ảnh dùng thử MyVinmec: chatbot hướng dẫn vào Kết quả cận lâm sàng và Lịch sử khám; thông tin cá nhân đã che." width="738" height="1514">
+      <p class="caption">Dùng thử T6 · ảnh đã che thông tin</p>
     </div>
-    <div>
-      <p><b>Coach nhóm K4</b></p>
-      <ul class="small">
-        <li>Mời phỏng vấn từ ngày đầu, mời gấp đôi số cần (bài học của chính mình).</li>
-        <li>2 gate: đọc log phỏng vấn (T3–T4), coach tự thử prototype như người lạ (T6).</li>
-        <li>Thiếu mà trung thực tốt hơn đủ mà bịa.</li>
-        <li>Câu hỏi cuối: "Với 3 người thử, đã chứng minh chưa?" Câu đúng: <b>chưa</b>.</li>
-      </ul>
+    <div class="evidence-text">
+      <h2 id="title-3">Chỉ đường tới<br>mục không thấy.</h2>
+      <dl class="evidence-list">
+        <div><dt>Dùng thử · T3, T6</dt><dd>Không tìm thấy mục “kết quả” sau khi xem Trang chủ, 15 ô dịch vụ và Hồ sơ. Chatbot vẫn chỉ tới hai mục không thấy trên tài khoản thử.</dd></div>
+        <div><dt>Review store</dt><dd>Phản ánh không tìm ra hồ sơ, OTP lỗi, phải chờ bác sĩ đưa kết quả lên.</dd></div>
+        <div><dt>P3 · viện công</dt><dd>Bác sĩ giải thích đủ hiểu khi có kết quả. Chi phí trải nghiệm nằm ở thời gian chờ tại viện.</dd></div>
+      </dl>
+      <p class="note">Có thể các mục chỉ hiện sau khi liên kết hồ sơ, nhưng chatbot không nói điều kiện đó. P3 không đồng ý trích lời; nội dung trên là tóm tắt.</p>
     </div>
-  </div>
-  <span class="n">10</span>
-</section>
-</body></html>
+    <span class="page-number" aria-label="Slide 3 trên 10">03 / 10</span>
+  </section>
+
+  <section class="slide insights" id="slide-4" aria-labelledby="title-4">
+    <h2 id="title-4">Vướng ở bước tới được kết quả.</h2>
+    <p class="intro">Chưa có đủ bằng chứng để chọn bài toán “hiểu chỉ số”.</p>
+    <div class="insight-table" role="table" aria-label="Insight và độ mạnh bằng chứng">
+      <div class="insight-row table-head" role="row"><span role="columnheader">Insight</span><span role="columnheader">Độ mạnh</span></div>
+      <div class="insight-row main-insight" role="row"><p role="cell"><b>I1</b> Vướng ở chỗ <strong>tới được</strong> kết quả, chưa phải ở chỗ <strong>hiểu</strong> kết quả.</p><p role="cell">Trung bình<small>Ba nguồn cùng chiều, mỗi nguồn mỏng</small></p></div>
+      <div class="insight-row" role="row"><p role="cell"><b>I2</b> Không rõ trạng thái, điều kiện để xem; thông báo kết quả có thể lẫn quảng cáo.</p><p role="cell">Trung bình</p></div>
+      <div class="insight-row" role="row"><p role="cell"><b>I3</b> Trợ lý chỉ đường như thể mọi tài khoản cùng trạng thái.</p><p role="cell">Yếu<small>Một câu hỏi, một tài khoản</small></p></div>
+      <div class="insight-row" role="row"><p role="cell"><b>I4</b> Tạo hồ sơ mới xong thì mất lối kết nối hồ sơ cũ.</p><p role="cell">Yếu<small>Chưa kiểm với người đã khám</small></p></div>
+      <div class="insight-row" role="row"><p role="cell"><b>I5</b> Chờ tại viện tốn nửa ngày, nhưng nằm ngoài app.</p><p role="cell">Yếu với app</p></div>
+    </div>
+    <p class="footnote">Tất cả là giả thuyết có bằng chứng ban đầu, chưa được kiểm chứng.</p>
+    <span class="page-number" aria-label="Slide 4 trên 10">04 / 10</span>
+  </section>
+
+  <section class="slide journey" id="slide-5" aria-labelledby="title-5">
+    <h2 id="title-5">Điểm đứt: tới được kết quả.</h2>
+    <p class="intro">Hai luồng riêng: viện công qua lời kể P3, và qua app từ dùng thử cùng review.</p>
+    <p class="journey-context">Sau xét nghiệm / chụp chiếu →</p>
+    <table class="journey-table">
+      <caption class="sr-only">Bốn bước giữa của hành trình nhận kết quả. Hai luồng có nguồn bằng chứng riêng.</caption>
+      <thead><tr><th scope="col">Nguồn</th><th scope="col">Chờ kết quả</th><th scope="col">Biết là đã có</th><th scope="col" class="selected-stage">Tới được kết quả</th><th scope="col">Đọc, hiểu</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Viện công<small>P3</small></th><td data-stage="Chờ kết quả"><strong>Đ1 · Chờ 2–3 giờ</strong><br>Ngồi trước phòng khám, đợi gọi.</td><td data-stage="Biết là đã có">Bác sĩ gọi vào; kết quả chuyển thẳng tới bác sĩ.</td><td data-stage="Tới được kết quả">Không có bước tự lấy kết quả; bác sĩ nhận trực tiếp.</td><td data-stage="Đọc, hiểu">Bác sĩ giải thích, đánh dấu chỉ số cần chú ý. P3 thấy đủ hiểu.</td></tr>
+        <tr><th scope="row">Qua app<small>Dùng thử + review</small></th><td data-stage="Chờ kết quả" class="unknown">Chưa có lời kể về đoạn chờ ở nhà.</td><td data-stage="Biết là đã có"><strong>Đ2 · Dễ bỏ lỡ</strong><br>5 thông báo đầu là quảng cáo; review muốn nhận kết quả sớm.</td><td data-stage="Tới được kết quả" class="selected-stage"><strong>Đ3 · Điểm chọn</strong><br>Không thấy mục kết quả; chatbot chỉ sai. Review phản ánh OTP lỗi.</td><td data-stage="Đọc, hiểu" class="unknown">Chưa quan sát được. Người dùng thử chưa từng khám tại Vinmec.</td></tr>
+      </tbody>
+    </table>
+    <p class="journey-context journey-after">→ Bước tiếp theo: P3 nhận đơn và thuốc; qua app chưa quan sát được, review kể phải gọi tổng đài khi kết nối lỗi.</p>
+    <div class="journey-note"><p class="note"><strong>Cảm xúc trong sơ đồ gốc là suy luận</strong> từ lời kể và thao tác, không phải thang đo P3 tự báo cáo. Ô xám là chưa có dữ liệu trực tiếp.</p><a href="assets/journey-map.svg" target="_blank" rel="noopener">Xem sơ đồ gốc 6 bước ↗</a></div>
+    <span class="page-number" aria-label="Slide 5 trên 10">05 / 10</span>
+  </section>
+
+  <section class="slide need" id="slide-6" aria-labelledby="title-6">
+    <p class="eyebrow">Need statement · Biodesign</p>
+    <h2 id="title-6">Một nhu cầu, chưa chọn giải pháp.</h2>
+    <blockquote>Cách để <strong>giảm số lần phải gọi tổng đài, quay lại viện hoặc bỏ cuộc trước khi xem được kết quả</strong>, cho người bệnh ngoại trú <span class="subtle">(và người nhà xem hộ)</span> đã xét nghiệm hoặc chụp chiếu mà kết quả chỉ trả qua app, khi họ chưa biết kết quả đang ở trạng thái nào và cần làm gì để xem được.</blockquote>
+    <div class="need-notes"><p><strong>Outcome có thể đo</strong><br>Số lần phải dùng cách xoay xở ngoài app.</p><p><strong>Không chứa giải pháp</strong><br>Không đặt AI hay chatbot vào nhu cầu.</p><p><strong>Giả định cần kiểm</strong><br>Chưa phỏng vấn người nhà xem hộ.</p></div>
+    <p class="footnote">Đã bỏ hướng “không hiểu kết quả” vì chưa có bằng chứng; “chờ tại viện” nằm ở vận hành, mới có một nguồn.</p>
+    <span class="page-number" aria-label="Slide 6 trên 10">06 / 10</span>
+  </section>
+
+  <section class="slide references" id="slide-7" aria-labelledby="title-7">
+    <h2 id="title-7">Tham khảo cách làm, giữ bối cảnh.</h2>
+    <div class="reference-list">
+      <article><div><h3>Cures Act</h3><p>Mỹ · truy cập kết quả trên portal</p><a href="https://github.com/loversky02/vinmec-exploration-sprint-baitap/blob/main/04-best-practice/README.md#1-công-bố-kết-quả-ngay-trên-portal-cures-act-mỹ">Đọc nguồn nghiên cứu ↗</a></div><p><strong>Lấy:</strong> cho thấy trạng thái, tránh ẩn toàn bộ kết quả.<br><span class="note">Cẩn thận: lo lắng khi kết quả bất thường; không suy quy định Mỹ sang Việt Nam.</span></p></article>
+      <article><div><h3>NHS App</h3><p>Anh · Test results và truy cập hộ</p><a href="https://github.com/loversky02/vinmec-exploration-sprint-baitap/blob/main/04-best-practice/README.md#2-mục-test-results-rõ-ràng-có-luật-phát-hành-và-truy-cập-hộ-nhs-app-anh">Đọc nguồn nghiên cứu ↗</a></div><p><strong>Lấy:</strong> mục kết quả rõ tên, giải thích vì sao chưa thấy, xem hộ có ủy quyền.<br><span class="note">Cẩn thận: hạ tầng khác; tài liệu chính sách không chứng minh hiệu quả.</span></p></article>
+      <article><div><h3>Stanford</h3><p>AI soạn nháp, bác sĩ duyệt</p><a href="https://github.com/loversky02/vinmec-exploration-sprint-baitap/blob/main/04-best-practice/README.md#3-ai-soạn-nháp-giải-thích-kết-quả-bác-sĩ-duyệt-trước-khi-gửi-stanford">Đọc nguồn nghiên cứu ↗</a></div><p><strong>Lấy:</strong> con người duyệt nội dung có giá phải trả cao khi sai.<br><span class="note">Cẩn thận: mẫu nhỏ, tự báo cáo; prototype này không giải thích chỉ số.</span></p></article>
+    </div>
+    <p class="footnote">Tổng hợp từ nguồn trong repo. Khác biệt pháp lý, dữ liệu và ngôn ngữ cần được đánh giá riêng.</p>
+    <span class="page-number" aria-label="Slide 7 trên 10">07 / 10</span>
+  </section>
+
+  <section class="slide prototype" id="slide-8" aria-labelledby="title-8">
+    <div class="prototype-copy">
+      <h2 id="title-8">Thấy trạng thái.<br>Biết bước tiếp.</h2>
+      <p><strong>Giả thuyết:</strong> điều kiện xem rõ ràng và trợ lý chỉ đúng màn theo trạng thái có thể giúp người dùng tới kết quả mà không gọi tổng đài.</p>
+      <ul class="plain-list"><li>“Kết quả của tôi”, thanh 4 bước và giờ dự kiến.</li><li>4 tình huống giả; thông báo kết quả tách ưu đãi.</li><li>Trợ lý nhận trạng thái; máy chủ lọc nút tới màn không tồn tại.</li></ul>
+      <a class="primary-link" href="https://vinmec.vinunquant.com/" target="_blank" rel="noopener">Thử prototype <span aria-hidden="true">↗</span></a>
+      <p class="data-warning">Dữ liệu giả. Không nhập thông tin thật.</p>
+    </div>
+    <figure class="prototype-screens"><img src="proto-chua_ket_noi.png" alt="Prototype tình huống chưa kết nối hồ sơ, có nút liên kết hồ sơ cũ." width="390" height="800"><img src="proto-dang_cho.png" alt="Prototype tình huống còn chờ, hiển thị trạng thái và bước tiếp theo." width="390" height="800"><figcaption>Hai tình huống mô phỏng: chưa kết nối / còn chờ</figcaption></figure>
+    <p class="footnote"><strong>Chưa thử với người dùng. Chế độ AI chưa chạy</strong> vì chưa có API key; mới chạy luật cố định. Làm được chưa có nghĩa là giúp được.</p>
+    <span class="page-number" aria-label="Slide 8 trên 10">08 / 10</span>
+  </section>
+
+  <section class="slide risks" id="slide-9" aria-labelledby="title-9">
+    <div class="risk-heading"><h2 id="title-9">Rủi ro và thiết kế Human–AI</h2><p class="verdict">Not Yet.</p><p>Đủ để thử trong môi trường giả lập.<br>Chưa đủ để dùng trên app thật.</p></div>
+    <div class="risk-columns">
+      <div><h3>Ranh giới trong prototype</h3><ul class="plain-list"><li>Chỉ tìm kết quả, báo lại trạng thái. Không giải thích chỉ số hay chẩn đoán.</li><li>Luật bắt từ khóa khẩn cấp trước model. Đây không phải bộ phân loại đã được y tế duyệt.</li><li>Mọi màn có đường đi không cần trợ lý; luôn có lối sang tổng đài.</li></ul></div>
+      <div><h3>Ba điều còn chặn triển khai</h3><ol class="risk-gates"><li>Chưa thử chế độ AI, chưa biết model có tuân thủ giới hạn.</li><li>Từ điển khẩn cấp chưa được nhân viên y tế duyệt.</li><li>Ủy quyền xem hộ và dữ liệu gửi nhà cung cấp model chưa được đánh giá pháp lý.</li></ol></div>
+    </div>
+    <p class="footnote">Bản thật cần đánh giá bảo vệ dữ liệu sức khỏe. <a href="https://github.com/loversky02/vinmec-exploration-sprint-baitap/blob/main/06-rui-ro-dao-duc/README.md">12 rủi ro: tách rõ đã có, mô phỏng và đề xuất ↗</a></p>
+    <span class="page-number" aria-label="Slide 9 trên 10">09 / 10</span>
+  </section>
+
+  <section class="slide next" id="slide-10" aria-labelledby="title-10">
+    <h2 id="title-10">Bước tiếp theo: kiểm điều chưa biết.</h2>
+    <div class="next-grid">
+      <div class="research-next"><h3>Nghiên cứu tiếp</h3><p class="next-lead">Thêm ≥2 phỏng vấn.<br>Thử với 2–3 người lạ.</p><p>Ưu tiên người xem kết quả qua app và người xem hộ bố mẹ. Quan sát họ tự làm, rồi sửa đúng một điều.</p><p class="note">Còn chưa biết: tài khoản đã khám có gặp I4? Tài khoản đã kết nối có gặp I3? Prototype có giúp tới kết quả?</p></div>
+      <div class="coaching"><h3>Coach nhóm K4</h3><dl><div><dt>Mời từ ngày đầu</dt><dd>Mời gấp đôi số cần; ghi thật nếu vẫn thiếu.</dd></div><div><dt>Hai điểm kiểm</dt><dd>Đọc log vào thứ Ba–Tư; coach tự thử prototype như người lạ vào thứ Sáu.</dd></div><div><dt>Giữ đường về bằng chứng</dt><dd>Quan sát khác suy luận. Mỗi thay đổi phải dẫn về một điều đã thấy.</dd></div></dl></div>
+    </div>
+    <div class="closing"><p>“Với 3 người thử, đã chứng minh chưa?” <strong>Chưa.</strong></p><a href="https://github.com/loversky02/vinmec-exploration-sprint-baitap">Xem repo và bằng chứng ↗</a></div>
+    <span class="page-number" aria-label="Slide 10 trên 10">10 / 10</span>
+  </section>
+</main>
+<footer class="deck-nav" aria-label="Điều hướng slide">
+  <div class="progress-block"><p id="position" role="status" aria-live="polite" aria-atomic="true">01 <span>/ 10</span></p><progress id="progress" value="1" max="10" aria-label="Tiến độ slide">1 / 10</progress></div>
+  <p class="key-hint js-only">Phím ← → để chuyển slide</p>
+  <div class="step-controls"><a id="previous" href="#slide-1" aria-label="Slide trước"><span aria-hidden="true">←</span> <span>Trước</span></a><a id="next" href="#slide-2" aria-label="Slide tiếp theo"><span>Tiếp</span> <span aria-hidden="true">→</span></a></div>
+</footer>
+</body>
+</html>

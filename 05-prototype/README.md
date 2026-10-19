@@ -29,11 +29,17 @@ Bố cục lấy cảm hứng từ các màn tìm trên Mobbin, chỉ mượn c�
 
 ## Chạy
 
+**[Mở prototype trên web](https://vinmec.vinunquant.com/)** · **[Xem slide trình bày](https://vinmec.vinunquant.com/slides/)**
+
+Bản online dùng dữ liệu giả và trợ lý bằng luật cố định. Không nhập thông tin thật.
+
+### Chạy trên máy cá nhân
+
 ```bash
 python3 05-prototype/server.py
 ```
 
-Mở http://localhost:8770. Chỉ cần Python 3, không cài thêm gói nào.
+Sau khi chạy lệnh, mở địa chỉ máy cá nhân `http://localhost:8770` do server in ra. Chỉ cần Python 3, không cài thêm gói nào.
 
 Muốn bật trợ lý AI thì đặt biến môi trường `ANTHROPIC_API_KEY` trước khi chạy (mặc định dùng model `claude-sonnet-5-5`, đổi bằng `CLAUDE_MODEL`). Không có key thì trợ lý chạy bằng luật cố định; khung bên trái ghi rõ đang ở chế độ nào.
 

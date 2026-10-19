@@ -9,5 +9,13 @@ vinmec.vinunquant.com {
 		X-Robots-Tag "noindex, nofollow"
 		X-Frame-Options DENY
 	}
-	reverse_proxy 127.0.0.1:8770
+	@slides_root path /slides
+	redir @slides_root /slides/ permanent
+	handle_path /slides/* {
+		root * /opt/vinmec-presentation/current
+		file_server
+	}
+	handle {
+		reverse_proxy 127.0.0.1:8770
+	}
 }

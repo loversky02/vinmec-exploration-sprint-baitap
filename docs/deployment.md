@@ -1,6 +1,7 @@
 # Triển khai prototype
 
 - Demo: https://vinmec.vinunquant.com/
+- Slide HTML: https://vinmec.vinunquant.com/slides/
 - Mã nguồn: https://github.com/loversky02/vinmec-exploration-sprint-baitap
 - VPS: `103.249.200.42`; dùng Caddy hiện có và Cloudflare DNS/proxy.
 
@@ -16,8 +17,9 @@ chỉ lắng nghe loopback. [Cấu hình Caddy](../deploy/vinmec.caddy) được
 `/etc/caddy/Caddyfile`, phục vụ HTTPS cho subdomain. Cấu hình tên miền chính
 được giữ nguyên. Caddy tự quản lý chứng chỉ; tham khảo [lệnh validate và reload](https://caddyserver.com/docs/command-line).
 
-Chỉ mã prototype trong `05-prototype/app`, `05-prototype/prompts` và
-`05-prototype/server.py` được đưa lên dịch vụ web. Tài liệu phỏng vấn không
+Mã prototype trong `05-prototype/app`, `05-prototype/prompts` và
+`05-prototype/server.py` được đưa lên dịch vụ web. Slide HTML và các ảnh bằng
+chứng đã che thông tin nằm ở static root riêng cho `/slides/`. Log phỏng vấn không
 được phục vụ trên subdomain. Log thử tải về nằm ở máy người thử;
 `05-prototype/test-logs/`, ghi chép gốc, môi trường và kế hoạch nội bộ được Git
 bỏ qua theo [.gitignore](../.gitignore).
@@ -37,6 +39,20 @@ caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 
 Sau cập nhật, kiểm tra HTTPS demo, bốn tình huống, trợ lý và trang chính.
 `/api/mode` phải trả `{"ai":false,"model":null}` cho bản triển khai này.
+
+## Cập nhật slide HTML
+
+Nguồn là [slides/slides.html](../slides/slides.html), CSS, JavaScript, font và
+ảnh trong cùng thư mục. Không cần Node.js hay bước biên dịch framework.
+Đặt các tệp trong `/opt/vinmec-presentation/releases/<release>/`, đổi tên
+`slides.html` thành `index.html` trong bản triển khai và trỏ symlink
+`/opt/vinmec-presentation/current` tới release đó. Chỉ đưa các tài nguyên được
+slide dùng vào static root này; không trỏ Caddy tới toàn bộ repository.
+
+Kiểm tra `/slides/`, chuyển trang, liên kết ảnh và đường dẫn trực tiếp tới từng
+slide sau cập nhật. Bản `slides.pdf` cũ được giữ trong Git làm tài liệu lưu trữ;
+trang HTML là bản trình bày hiện hành. Có thể quay về bản slide trước bằng cách
+đổi lại symlink riêng của presentation, không cần restart prototype.
 
 ## Khôi phục
 

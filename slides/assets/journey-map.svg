@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="30" y="38" font-size="22" font-weight="bold" fill="#1a1a1a">Journey map: nhận kết quả khám (ngoại trú, có xét nghiệm / chụp chiếu)</text>
+  <text x="30" y="60" fill="#555">Hai luồng: viện công, bác sĩ đọc kết quả tại chỗ (P3) và qua app MyVinmec (dùng thử + review). Điểm cảm xúc do mình suy ra từ lời kể, chưa hỏi trực tiếp.</text>
+
+  <!-- stage headers -->
+  <g font-weight="bold" fill="#fff" text-anchor="middle">
+    <rect x="180" y="80" width="160" height="40" fill="#2f5d8a"/><text x="260" y="105">1. Làm XN, chụp</text>
+    <rect x="345" y="80" width="160" height="40" fill="#2f5d8a"/><text x="425" y="105">2. Chờ kết quả</text>
+    <rect x="510" y="80" width="160" height="40" fill="#2f5d8a"/><text x="590" y="105">3. Biết là đã có</text>
+    <rect x="675" y="80" width="160" height="40" fill="#2f5d8a"/><text x="755" y="105">4. Tới được kết quả</text>
+    <rect x="840" y="80" width="160" height="40" fill="#2f5d8a"/><text x="920" y="105">5. Đọc, hiểu</text>
+    <rect x="1005" y="80" width="165" height="40" fill="#2f5d8a"/><text x="1087" y="105">6. Bước tiếp theo</text>
+  </g>
+
+  <!-- lane labels -->
+  <g font-weight="bold" fill="#1a1a1a">
+    <text x="30" y="160">Viện công (P3)</text>
+    <text x="30" y="178" font-weight="normal" fill="#555" font-size="11">việc người bệnh làm</text>
+    <text x="30" y="300">Qua app</text>
+    <text x="30" y="318" font-weight="normal" fill="#555" font-size="11">việc người dùng làm</text>
+    <text x="30" y="470">Cảm xúc</text>
+    <text x="30" y="488" font-weight="normal" fill="#555" font-size="11">−2 … +2</text>
+  </g>
+
+  <!-- P3 lane -->
+  <g font-size="12" fill="#1a1a1a">
+    <rect x="180" y="140" width="160" height="90" fill="#eef3f8" stroke="#c9d6e3"/>
+    <text x="188" y="160">Đến 7h30, chờ đăng ký</text><text x="188" y="176">tới 8h30 (ưu tiên người</text><text x="188" y="192">trên 75 tuổi)</text><text x="188" y="212">Làm XN máu, điện tim</text>
+    <rect x="345" y="140" width="160" height="90" fill="#fdecea" stroke="#e8a59c"/>
+    <text x="353" y="160">Ngồi trước cửa phòng</text><text x="353" y="176">khám chờ gọi</text><text x="353" y="196" font-weight="bold">2–3 tiếng tại viện</text>
+    <rect x="510" y="140" width="160" height="90" fill="#eef3f8" stroke="#c9d6e3"/>
+    <text x="518" y="160">Bác sĩ gọi vào</text><text x="518" y="176">(kết quả chuyển thẳng</text><text x="518" y="192">tới bác sĩ)</text>
+    <rect x="675" y="140" width="160" height="90" fill="#f4f4f4" stroke="#ddd"/>
+    <text x="683" y="160" fill="#777">Không có bước này:</text><text x="683" y="176" fill="#777">người bệnh không tự</text><text x="683" y="192" fill="#777">cầm kết quả</text>
+    <rect x="840" y="140" width="160" height="90" fill="#eaf6ec" stroke="#9fd0a8"/>
+    <text x="848" y="160">Bác sĩ giải thích, đánh</text><text x="848" y="176">dấu chỉ số cần để ý</text><text x="848" y="196" font-weight="bold">"Đủ hiểu"</text>
+    <rect x="1005" y="140" width="165" height="90" fill="#eef3f8" stroke="#c9d6e3"/>
+    <text x="1013" y="160">Kê đơn 1 tháng, thanh</text><text x="1013" y="176">toán, nhận thuốc</text><text x="1013" y="196" fill="#b23b2e">Mất nửa ngày làm</text>
+  </g>
+
+  <!-- App lane -->
+  <g font-size="12" fill="#1a1a1a">
+    <rect x="180" y="270" width="160" height="130" fill="#eef3f8" stroke="#c9d6e3"/>
+    <text x="188" y="290">Khám, làm XN/chụp</text><text x="188" y="306">Từ 5/2024 phần lớn ca</text><text x="188" y="322">chụp không in phim,</text><text x="188" y="338">chỉ xem qua app / SMS</text>
+    <rect x="345" y="270" width="160" height="130" fill="#f4f4f4" stroke="#ddd"/>
+    <text x="353" y="290">Về nhà chờ</text><text x="353" y="306" fill="#777">Chưa có ai kể về</text><text x="353" y="322" fill="#777">đoạn này (chưa có</text><text x="353" y="338" fill="#777">phỏng vấn)</text>
+    <rect x="510" y="270" width="160" height="130" fill="#fdecea" stroke="#e8a59c"/>
+    <text x="518" y="290">Mở Thông báo:</text><text x="518" y="306">5 tin đầu đều là</text><text x="518" y="322">quảng cáo gói khám</text><text x="518" y="342">Review: muốn kết quả</text><text x="518" y="358">lên ngay, không đợi</text><text x="518" y="374">bác sĩ đưa lên</text>
+    <rect x="675" y="270" width="160" height="130" fill="#f9d6d0" stroke="#d9786a" stroke-width="2"/>
+    <text x="683" y="290">Không có mục "kết quả"</text><text x="683" y="306">ở Trang chủ, 15 ô dịch</text><text x="683" y="322">vụ hay tab Hồ sơ</text><text x="683" y="342">Chatbot chỉ tới mục</text><text x="683" y="358">không có. OTP lỗi.</text><text x="683" y="374">Phải "kết nối hồ sơ"</text><text x="683" y="390">nhưng app không nói</text>
+    <rect x="840" y="270" width="160" height="130" fill="#f4f4f4" stroke="#ddd"/>
+    <text x="848" y="290" fill="#777">Chưa quan sát được</text><text x="848" y="306" fill="#777">(người thử chưa từng</text><text x="848" y="322" fill="#777">khám ở Vinmec)</text><text x="848" y="342">1 review: "bác sĩ chẳng</text><text x="848" y="358">hề nói" (giả thuyết B)</text>
+    <rect x="1005" y="270" width="165" height="130" fill="#f4f4f4" stroke="#ddd"/>
+    <text x="1013" y="290" fill="#777">Chưa quan sát được</text><text x="1013" y="310">Review: phải gọi tổng</text><text x="1013" y="326">đài khi kết nối lỗi</text>
+  </g>
+
+  <!-- emotion chart -->
+  <line x1="180" y1="530" x2="1170" y2="530" stroke="#999" stroke-dasharray="4 4"/>
+  <g fill="#777" font-size="11"><text x="150" y="454">+2</text><text x="150" y="494">+1</text><text x="155" y="534">0</text><text x="152" y="574">−1</text><text x="152" y="614">−2</text></g>
+  <polyline points="260,530 425,570 590,530 920,490 1087,570" fill="none" stroke="#2f5d8a" stroke-width="3"/>
+  <g fill="#2f5d8a"><circle cx="260" cy="530" r="6"/><circle cx="425" cy="570" r="6"/><circle cx="590" cy="530" r="6"/><circle cx="920" cy="490" r="6"/><circle cx="1087" cy="570" r="6"/></g>
+  <polyline points="260,530 590,570 755,610" fill="none" stroke="#d9786a" stroke-width="3" stroke-dasharray="8 4"/>
+  <g fill="#d9786a"><circle cx="260" cy="530" r="6"/><circle cx="590" cy="570" r="6"/><circle cx="755" cy="610" r="7"/></g>
+  <text x="768" y="614" fill="#b23b2e" font-weight="bold">Điểm đau lớn nhất</text>
+  <g font-size="12"><rect x="180" y="640" width="14" height="4" fill="#2f5d8a"/><text x="200" y="645">Viện công (P3)</text>
+  <rect x="330" y="640" width="14" height="4" fill="#d9786a"/><text x="350" y="645">Qua app (dùng thử + review). Bước 2, 5, 6 chưa có dữ liệu nên bỏ trống</text></g>
+
+  <!-- pain markers -->
+  <g font-size="12" fill="#1a1a1a">
+    <text x="30" y="690" font-weight="bold">Điểm đau (đánh dấu đỏ ở trên)</text>
+    <text x="30" y="710">Đ1 · Chờ 2–3 tiếng tại viện, mất nửa ngày làm (P3, bước 2)      Đ2 · Thông báo kết quả (nếu có) lẫn giữa quảng cáo (app, bước 3)</text>
+    <text x="30" y="728">Đ3 · Không tìm ra kết quả; không biết phải kết nối hồ sơ; chatbot chỉ sai đường; OTP lỗi (app + review, bước 4)</text>
+    <text x="30" y="746" fill="#555">Nguồn: 01-phong-van/logs/P3.md · myvinmec-app-trial.md · review-store-tom-tat.md</text>
+  </g>
+</svg>

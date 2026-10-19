@@ -1,6 +1,10 @@
 # Một lần đi khám: khoảnh khắc "nhận kết quả" trên MyVinmec
 
-Bài tập 1 tuần ứng tuyển Vinmec Exploration Sprint. Bản tóm tắt để present: [slides.pdf](slides.pdf).
+Bài tập 1 tuần ứng tuyển Vinmec Exploration Sprint.
+
+**[Xem slide trình bày](https://vinmec.vinunquant.com/slides/)** · **[Thử prototype](https://vinmec.vinunquant.com/)**
+
+Slide HTML đọc được trên điện thoại và có chế độ trình chiếu trên máy tính. Prototype dùng dữ liệu giả; không nhập thông tin thật.
 
 ## Khoảnh khắc đã chọn
 
@@ -28,17 +32,13 @@ Kết luận chính: vướng nằm ở chỗ **tới được** kết quả, ch
 | [06-rui-ro-dao-duc/](06-rui-ro-dao-duc/README.md) | 12 rủi ro, đường chuyển tuyến khẩn cấp, thiết kế Human-AI, kết luận Not Yet |
 | [07-coach-plan/](07-coach-plan/README.md) | Một trang: mình sẽ coach nhóm K4 làm bài này thế nào |
 | [AI-USAGE.md](AI-USAGE.md) | **Phần nào do AI tạo**, mức độ và cách kiểm tra từng file |
-| [slides.pdf](slides.pdf) | 10 slide cho buổi present |
+| [Slide HTML](https://vinmec.vinunquant.com/slides/) | 10 slide trình bày: bằng chứng, journey map, prototype và giới hạn |
 
-## Chạy prototype
+## Dùng thử prototype
 
 **Dùng thử online:** [vinmec.vinunquant.com](https://vinmec.vinunquant.com/) · [Hướng dẫn triển khai](docs/deployment.md). Bản online dùng dữ liệu giả, trợ lý chạy bằng luật cố định; không nhập thông tin thật.
 
-```bash
-python3 05-prototype/server.py
-```
-
-Mở http://localhost:8770. Thêm `?s=dang_cho` vào URL để mở thẳng tình huống "kết quả còn chờ".
+[Mở tình huống kết quả còn chờ](https://vinmec.vinunquant.com/?s=dang_cho). Hướng dẫn chạy mã nguồn dành cho người phát triển nằm trong [tài liệu prototype](05-prototype/README.md#chạy-trên-máy-cá-nhân).
 
 ## Ràng buộc đã tuân thủ
 
