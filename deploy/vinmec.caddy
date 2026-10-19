@@ -1,0 +1,13 @@
+vinmec.vinunquant.com {
+	encode zstd gzip
+	request_body {
+		max_size 64KB
+	}
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy no-referrer
+		X-Robots-Tag "noindex, nofollow"
+		X-Frame-Options DENY
+	}
+	reverse_proxy 127.0.0.1:8770
+}

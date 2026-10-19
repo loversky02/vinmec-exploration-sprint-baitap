@@ -1,0 +1,24 @@
+[Unit]
+Description=Vinmec exploration prototype (fictional data, rule-based assistant)
+After=network.target
+
+[Service]
+Type=simple
+User=vinmec-prototype
+Group=vinmec-prototype
+WorkingDirectory=/opt/vinmec-prototype/current/05-prototype
+ExecStart=/usr/bin/python3 -B -u server.py
+Environment=PORT=8770
+Environment=ANTHROPIC_API_KEY=
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictSUIDSGID=true
+MemoryMax=128M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target

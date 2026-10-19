@@ -1,0 +1,16 @@
+# Private working files: plans, raw notes that may hold names or contact details
+plans/
+01-phong-van/raw/
+*.m4a
+*.mp3
+*.wav
+.env
+.env.*
+node_modules/
+dist/
+.DS_Store
+.playwright-mcp/
+.claude/
+__pycache__/
+*.py[cod]
+05-prototype/test-logs/

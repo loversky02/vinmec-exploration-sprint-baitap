@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>Nhận kết quả trên MyVinmec</title>
+<style>
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 22px/1.4 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; color: #1a1a1a; }
+section { width: 1280px; height: 720px; padding: 56px 72px; page-break-after: always; position: relative; overflow: hidden; }
+section:last-child { page-break-after: auto; }
+h1 { font-size: 44px; margin: 0 0 18px; color: #0a5c8f; }
+h2 { font-size: 34px; margin: 0 0 22px; color: #0a5c8f; }
+.n { position: absolute; right: 40px; bottom: 26px; font-size: 14px; color: #999; }
+.muted { color: #666; } .small { font-size: 17px; }
+.box { background: #f3f7fa; border-left: 6px solid #0a5c8f; padding: 18px 22px; border-radius: 6px; }
+.warn { background: #fff7e0; border-left-color: #e0a100; }
+.cols { display: flex; gap: 40px; align-items: flex-start; }
+.cols > div { flex: 1; }
+ul { margin: 8px 0; padding-left: 26px; } li { margin: 6px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 18px; }
+td, th { border-bottom: 1px solid #ddd; padding: 8px 10px; text-align: left; vertical-align: top; }
+th { color: #0a5c8f; }
+img.shot { border: 1px solid #ccc; border-radius: 8px; }
+</style></head><body>
+
+<section>
+  <p class="muted">Bài tập ứng tuyển · Vinmec Exploration Sprint</p>
+  <h1 style="font-size:54px;margin-top:120px">Một lần đi khám:<br>khoảnh khắc "nhận kết quả" trên MyVinmec</h1>
+  <p class="muted" style="margin-top:40px">Bằng chứng: 1 phỏng vấn (P3) · tự dùng thử app (6 nhiệm vụ, 22 ảnh) · 21 review trên store<br>Prototype bấm được + trợ lý tìm kết quả theo trạng thái tài khoản</p>
+  <span class="n">1</span>
+</section>
+
+<section>
+  <h2>Khoảnh khắc đã chọn và vì sao</h2>
+  <div class="box"><b>Sau khi khám xong: tìm và xem được kết quả xét nghiệm, chụp chiếu của mình.</b></div>
+  <ul style="margin-top:28px">
+    <li>Từ 5/2024 phần lớn ca chụp chiếu ở Vinmec không in phim, nên app gần như là lối chính để nhận kết quả.</li>
+    <li>Ba nguồn bằng chứng cùng chỉ về khoảnh khắc này nhiều hơn các khoảnh khắc khác (đặt lịch, chờ tại viện, tái khám).</li>
+    <li>Nếu bước này hỏng, người bệnh phải gọi tổng đài, quay lại viện, hoặc bỏ cuộc.</li>
+  </ul>
+  <div class="box warn" style="margin-top:28px"><b>Giới hạn:</b> mới có 1/3 buổi phỏng vấn đề yêu cầu. Mình không bịa P1, P2; bù bằng hai nguồn phụ và ghi tách riêng từng nguồn.</div>
+  <span class="n">2</span>
+</section>
+
+<section>
+  <h2>Bằng chứng: chatbot chỉ đường tới mục không có</h2>
+  <div class="cols">
+    <div style="flex:0 0 300px"><img class="shot" src="../01-phong-van/app-screens/T6-chatbot-04-hoi-xem-ket-qua-o-dau.png" style="height:560px"></div>
+    <div>
+      <ul>
+        <li><b>Dùng thử (T3):</b> lướt hết Trang chủ, 15 ô dịch vụ, tab Hồ sơ. Không có mục nào ghi "kết quả".</li>
+        <li><b>Dùng thử (T6):</b> chatbot bảo vào "Kết quả cận lâm sàng", "Lịch sử khám". Tab Hồ sơ không có hai mục này. Có thể chúng chỉ hiện sau khi kết nối hồ sơ khám, nhưng chatbot không nói điều kiện đó.</li>
+        <li><b>Review store:</b> "không kiếm ra hồ sơ", OTP lỗi, "phải đợi bác sĩ đưa lên".</li>
+        <li><b>P3 (viện công):</b> cầm kết quả trên tay thì bác sĩ giải thích đủ hiểu; cái tốn là chờ ở viện.</li>
+      </ul>
+      <p class="small muted">Ảnh đã che thông tin cá nhân. P3 không đồng ý cho trích lời nên không có trích dẫn nguyên văn.</p>
+    </div>
+  </div>
+  <span class="n">3</span>
+</section>
+
+<section>
+  <h2>Insight</h2>
+  <table>
+    <tr><th>#</th><th>Insight</th><th>Độ mạnh</th></tr>
+    <tr><td>I1</td><td><b>Vướng ở chỗ <i>tới được</i> kết quả, chưa phải ở chỗ <i>hiểu</i> kết quả.</b></td><td>Trung bình: 3 nguồn cùng chiều, mỗi nguồn mỏng</td></tr>
+    <tr><td>I2</td><td>Không biết kết quả đang ở trạng thái nào, cần điều kiện gì để xem (kết nối hồ sơ, chờ bác sĩ duyệt). Thông báo kết quả lẫn trong quảng cáo.</td><td>Trung bình</td></tr>
+    <tr><td>I3</td><td>Trợ lý AI hiện có trả lời như thể ai cũng ở cùng một trạng thái, nên làm <i>tăng</i> bối rối.</td><td>Yếu: 1 câu hỏi, 1 tài khoản</td></tr>
+    <tr><td>I4</td><td>Chọn "chưa từng khám, tạo hồ sơ mới" xong thì mất lối kết nối hồ sơ cũ.</td><td>Yếu: chưa kiểm với người đã khám</td></tr>
+    <tr><td>I5</td><td>Chờ tại viện tốn nửa ngày, nhưng xảy ra ngoài app.</td><td>Yếu với app</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:18px">Tất cả là giả thuyết có bằng chứng ban đầu, chưa được kiểm chứng.</p>
+  <span class="n">4</span>
+</section>
+
+<section>
+  <h2>Journey map: tụt sâu nhất ở bước "tới được kết quả"</h2>
+  <img src="../02-journey-map/journey-map.png" style="width:100%;max-height:560px;object-fit:contain">
+  <span class="n">5</span>
+</section>
+
+<section>
+  <h2>Need statement (Biodesign)</h2>
+  <div class="box" style="font-size:25px">Cách để <b>giảm số lần phải gọi tổng đài, quay lại viện hoặc bỏ cuộc trước khi xem được kết quả</b>, cho <b>người bệnh ngoại trú (và người nhà xem hộ)</b> đã làm xét nghiệm hoặc chụp chiếu mà kết quả chỉ trả qua app, khi họ <b>không biết kết quả của mình đang ở trạng thái nào và cần làm gì để xem được</b>.</div>
+  <ul style="margin-top:26px">
+    <li>Không chứa giải pháp: không nhắc AI, chatbot hay tính năng.</li>
+    <li>Outcome đo được: đúng các cách xoay xở xuất hiện trong review.</li>
+    <li>Đã bỏ: "không <i>hiểu</i> kết quả" (chưa có bằng chứng); "chờ tại viện" (việc vận hành, 1 nguồn).</li>
+    <li>Nhóm "người nhà xem hộ" là giả định, chưa phỏng vấn được ai.</li>
+  </ul>
+  <span class="n">6</span>
+</section>
+
+<section>
+  <h2>3 best practice quốc tế: lấy gì, không lấy gì</h2>
+  <table>
+    <tr><th>Thực hành</th><th>Lấy</th><th>Không lấy / cẩn thận</th></tr>
+    <tr><td><b>Cures Act (Mỹ)</b><br><span class="small muted">phát hành kết quả ngay trên portal</span></td><td>Cho người bệnh thấy trạng thái thay vì ẩn hoàn toàn</td><td>Phát hành ngay kết quả bất thường gây lo lắng; khác pháp lý VN</td></tr>
+    <tr><td><b>NHS App (Anh)</b><br><span class="small muted">mục Test results, luật phát hành, truy cập hộ</span></td><td>Một mục "kết quả" rõ ràng; trạng thái "chờ bác sĩ duyệt"; xem hộ có ủy quyền</td><td>Hạ tầng dữ liệu khác; mới có tài liệu chính sách</td></tr>
+    <tr><td><b>Stanford</b><br><span class="small muted">AI soạn nháp, bác sĩ duyệt</span></td><td>Người duyệt trước khi tới người bệnh</td><td>Không cho AI giải thích chỉ số trong prototype này</td></tr>
+  </table>
+  <span class="n">7</span>
+</section>
+
+<section>
+  <h2>Prototype: "Kết quả của tôi" + trợ lý tìm kết quả</h2>
+  <div class="cols">
+    <div style="flex:0 0 560px;display:flex;gap:12px"><img class="shot" src="proto-chua_ket_noi.png" style="height:560px"><img class="shot" src="proto-dang_cho.png" style="height:560px"></div>
+    <div>
+      <p><b>Giả thuyết:</b> nếu app cho thấy điều kiện để xem và trạng thái từng kết quả, và trợ lý chỉ chỉ đường tới màn có thật theo trạng thái của chính người hỏi, thì người dùng tới được kết quả mà không cần gọi tổng đài.</p>
+      <ul class="small">
+        <li>Ô "Kết quả của tôi" ở Trang chủ; thanh 4 bước + giờ dự kiến.</li>
+        <li>Trợ lý nhận trạng thái tài khoản; máy chủ bỏ mọi nút trỏ tới màn không có.</li>
+        <li>4 tình huống giả: chưa kết nối, lỡ tạo hồ sơ mới, còn chờ, xem hộ.</li>
+        <li>Thông báo "Kết quả" tách khỏi "Ưu đãi".</li>
+      </ul>
+      <div class="box warn small"><b>Chưa thử với người dùng.</b> Chế độ AI chưa chạy lần nào (chưa có API key); mới chạy chế độ luật cố định. Mới chứng minh <i>làm được</i>, chưa chứng minh <i>giúp được</i>.</div>
+    </div>
+  </div>
+  <span class="n">8</span>
+</section>
+
+<section>
+  <h2>Rủi ro và thiết kế Human–AI</h2>
+  <div class="cols">
+    <div>
+      <ul class="small">
+        <li><b>Khẩn cấp không qua model:</b> máy chủ bắt từ khóa ("đau ngực", "khó thở") trước, trả hướng dẫn gọi 115.</li>
+        <li><b>Không giải thích chỉ số:</b> chuyển sang đặt lịch hỏi bác sĩ / tổng đài.</li>
+        <li><b>Không bịa đường đi, không bịa giờ:</b> chỉ dùng màn và giờ dự kiến có trong dữ liệu.</li>
+        <li><b>Dữ liệu:</b> chỉ gửi loại xét nghiệm và trạng thái; bản thật cần đánh giá theo Nghị định 13/2023.</li>
+        <li><b>Recovery:</b> mọi màn đi tới được không cần trợ lý; luôn có tổng đài.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="box"><b>Kết luận: Not Yet.</b><br><span class="small">Đủ để thử với người dùng trong môi trường giả lập. Chưa đủ để đưa lên app thật vì:<br>1. Chế độ AI chưa chạy thử.<br>2. Từ điển khẩn cấp chưa được nhân viên y tế duyệt.<br>3. Luật xem hộ và luồng dữ liệu ra nhà cung cấp model chưa được đánh giá pháp lý.</span></div>
+      <p class="small muted">12 rủi ro, mỗi rủi ro ghi rõ "đã có" hay "đề xuất": 06-rui-ro-dao-duc/</p>
+    </div>
+  </div>
+  <span class="n">9</span>
+</section>
+
+<section>
+  <h2>Còn chưa biết, việc tiếp theo, và cách mình coach</h2>
+  <div class="cols">
+    <div>
+      <p><b>Still Unproven</b></p>
+      <ul class="small">
+        <li>Người đã khám ở Vinmec có gặp ngõ cụt I4 không.</li>
+        <li>Chatbot có chỉ sai với tài khoản đã kết nối không (I3).</li>
+        <li>Prototype có giúp người lạ tới được kết quả không.</li>
+      </ul>
+      <p><b>Tiếp theo</b></p>
+      <ul class="small">
+        <li>Phỏng vấn thêm ≥2 người: người xem qua app, người xem hộ bố mẹ.</li>
+        <li>Thử prototype với 2–3 người ngoài nhóm, sửa đúng 1 điều.</li>
+      </ul>
+    </div>
+    <div>
+      <p><b>Coach nhóm K4</b></p>
+      <ul class="small">
+        <li>Mời phỏng vấn từ ngày đầu, mời gấp đôi số cần (bài học của chính mình).</li>
+        <li>2 gate: đọc log phỏng vấn (T3–T4), coach tự thử prototype như người lạ (T6).</li>
+        <li>Thiếu mà trung thực tốt hơn đủ mà bịa.</li>
+        <li>Câu hỏi cuối: "Với 3 người thử, đã chứng minh chưa?" Câu đúng: <b>chưa</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <span class="n">10</span>
+</section>
+</body></html>

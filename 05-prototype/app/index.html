@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prototype · Kết quả của tôi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="panel">
+  <h1>Prototype: "Kết quả của tôi"</h1>
+  <p class="muted">Bản mô phỏng, <b>không phải app thật của Vinmec</b>. Toàn bộ dữ liệu là giả. Không nhập tên, số điện thoại hay mã y tế thật.</p>
+  <label for="scenario"><b>Tình huống thử</b></label>
+  <select id="scenario"></select>
+  <p id="scenario-note" class="muted"></p>
+  <p id="mode" class="mode"></p>
+  <details>
+    <summary>Nhiệm vụ cho người thử</summary>
+    <ol>
+      <li>Bạn vừa khám xong sáng nay. Hãy tìm xem kết quả xét nghiệm máu đã có chưa.</li>
+      <li>Nếu chưa có: khi nào có? Bạn cần làm gì?</li>
+      <li>Hỏi trợ lý một câu bất kỳ về kết quả của bạn.</li>
+    </ol>
+  </details>
+</aside>
+
+<main class="phone">
+  <div class="statusbar"><span>9:41</span><span>5G · 82%</span></div>
+  <header class="topbar"><small>MyVinmec · bản mô phỏng</small><span id="title">Trang chủ</span></header>
+  <section id="screen" class="screen"></section>
+  <nav class="tabs">
+    <button data-go="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Trang chủ</button>
+    <button data-go="ket_qua"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Kết quả</button>
+    <button data-go="thong_bao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/></svg>Thông báo</button>
+    <button data-go="ho_so"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Hồ sơ</button>
+  </nav>
+  <button id="fab" class="fab" aria-label="Mở trợ lý"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Hỏi kết quả</button>
+  <div id="chat" class="chat hidden">
+    <div class="chat-head">Trợ lý tìm kết quả <button id="close-chat" aria-label="Đóng">×</button></div>
+    <p class="chat-note">Trợ lý chỉ giúp tìm kết quả và xem trạng thái. Không giải thích chỉ số, không thay bác sĩ. Khẩn cấp: gọi 115.</p>
+    <div id="msgs" class="msgs"></div>
+    <div class="chips" id="chips"></div>
+    <form id="ask"><input id="q" autocomplete="off" placeholder="Ví dụ: kết quả máu của tôi đâu?"><button>Gửi</button></form>
+  </div>
+</main>
+<script src="scenarios.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
